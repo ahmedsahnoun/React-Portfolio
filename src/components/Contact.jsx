@@ -1,59 +1,39 @@
-import { motion } from "framer-motion"
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import Reveal from "../common/Reveal.jsx";
+import SectionHeading from "../common/SectionHeading.jsx";
 
 const Contact = () => {
 	return (
 		<section className="contact" id="contact">
-			<motion.div
-				initial="hidden"
-				whileInView="visible"
-				viewport={{ once: true }}
-				transition={{ duration: 0.8, delay: 0.3 }}
-				variants={{
-					visible: { opacity: 1, x: 0 },
-					hidden: { opacity: 0, x: -100 }
-				}}
-			>
-				<div className="contact-text">
-					<h2>Contact <span>Me!</span></h2>
-					<h4>
-						If you a have project in mind and are looking to collaborate or if any of my skills interest you,<br />
-						feel free to reach out!
-					</h4>
-					<div className="list">
-						<ul>
-							<li><a href="tel:+33667481052">+33667481052</a></li>
+			<SectionHeading eyebrow="Get In Touch" title="Contact" gradientTitle="Me" />
+			<div className="contact-grid">
+				<Reveal direction="left">
+					<div className="contact-text">
+						<p>
+							If you have a project in mind and are looking to collaborate, or if any of my skills
+							interest you, feel free to reach out.
+						</p>
+						<ul className="contact-list">
+							<li><a href="tel:+33667481052">+33 6 67 48 10 52</a></li>
 							<li><a href="mailto:ahmed.sahnoun.124@gmail.com">ahmed.sahnoun.124@gmail.com</a></li>
 						</ul>
+						<div className="contact-icons">
+							<a title="LinkedIn" href="https://www.linkedin.com/in/ahmed-sahnoun-9681b122/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+							<a title="GitHub" href="https://github.com/ahmedsahnoun" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+						</div>
 					</div>
-
-					<div className="contact-icons">
-						<a title="Linkedin" href="https://www.linkedin.com/in/ahmed-sahnoun-9681b1222/" target="_blank" rel="noopener noreferrer"><i className='bx bxl-linkedin'> </i></a>
-						<br /><br />
-						<a title="GitHub" href="https://github.com/ahmedsahnoun" target="_blank" rel="noopener noreferrer"><i className='bx bxl-github'></i></a>
-					</div>
-				</div>
-			</motion.div>
-			<motion.div
-				initial="hidden"
-				whileInView="visible"
-				viewport={{ once: true }}
-				transition={{ duration: 0.8, delay: 0.3 }}
-				variants={{
-					visible: { opacity: 1, x: 0 },
-					hidden: { opacity: 0, x: -100 }
-				}}
-			>
-				<div className="contact-form">
-					<form action="https://formsubmit.co/ahmed.sahnoun.124@gmail.com" method="POST">
+				</Reveal>
+				<Reveal direction="right" delay={0.1}>
+					<form className="contact-form" action="https://formsubmit.co/ahmed.sahnoun.124@gmail.com" method="POST">
 						<input name="name" placeholder="Your Name" required />
 						<input name="email" placeholder="Your Email Address" required />
-						<textarea name="details" id="details" cols="35" rows="10" placeholder="How Can I Help You" required></textarea>
-						<input type="submit" value="Send Message" className="submit" required />
+						<textarea name="details" rows="6" placeholder="How can I help you?" required></textarea>
+						<button type="submit" className="btn primary">Send Message</button>
 					</form>
-				</div>
-			</motion.div>
+				</Reveal>
+			</div>
 		</section>
 	);
-}
+};
 
 export default Contact;
