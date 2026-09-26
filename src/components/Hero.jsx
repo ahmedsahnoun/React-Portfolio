@@ -14,14 +14,16 @@ const Hero = () => {
 
 			<Reveal direction="up" delay={0.1}>
 				<h1>
-					I turn <span className="grad">messy systems</span> into products people actually enjoy using.
+					Software Engineer. 
+					<br/>
+					<span className="grad">Full-stack, cloud, and AI</span>.
 				</h1>
 			</Reveal>
 
 			<Reveal direction="up" delay={0.2}>
 				<p className="lede">
-					Software Engineer with 4+ years shipping enterprise and client-facing solutions — full-stack,
-					Azure cloud, and applied AI. Based in Antibes, France.
+					Software Engineer with 4+ years of experience building full-stack applications, cloud solutions,
+					and AI-powered systems. Based in Antibes, France.
 				</p>
 			</Reveal>
 
